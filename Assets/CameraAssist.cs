@@ -7,7 +7,8 @@ public class CameraAssist : MonoBehaviour {
     [SerializeField]
     LayerMask groundLayer;
     [SerializeField] Vector3 cameraFocus;
-    [SerializeField] float dist;
+    [SerializeField] bool followHeight;
+    [SerializeField] float dist, baseHeight;
     float height;
 
 
@@ -21,7 +22,8 @@ public class CameraAssist : MonoBehaviour {
 	
 }
     void Update () {
-        cameraFocus = new Vector3(transform.position.x, CastRay(), transform.position.z);
+        float yVal = followHeight ? CastRay() : baseHeight;
+        cameraFocus = new Vector3(transform.position.x, yVal, transform.position.z);
     }
 
     void OnDrawGizmos()
