@@ -41,9 +41,9 @@ void Update () {
     public void LoadScene(int sceneToLoad)
     {
        // print("attempting to load " + sceneToLoad);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        currentScene = sceneToLoad;
-        SceneManager.LoadSceneAsync(currentScene);
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+       // currentScene = sceneToLoad;
+       // SceneManager.LoadSceneAsync(currentScene);
     }
 #endregion
 }
