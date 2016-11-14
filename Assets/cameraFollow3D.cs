@@ -5,32 +5,39 @@ using UnityEngine.UI;
 
 public class cameraFollow3D : MonoBehaviour {
     #region PrivateVariables
+    [SerializeField] Transform camRef;
     [SerializeField] CameraAssist assistant;
-    [SerializeField] float speed, zoomSpeed;
-    [SerializeField] Vector3 cameraOffset;
+    [SerializeField] float speed, zoomSpeed, rotationSpeed;
+    [SerializeField] Vector3 cameraOffset, targetRotation, targetPos;
     [SerializeField] float[] zoomLevels, fovLevels;
     [SerializeField] Text camDescription;
     Camera cam;
     public float targetZoom, targetFOV;
-    #endregion
-#region PublicProperties
 
-#endregion
-#region UnityFunctions
-void Start () {
+    #endregion
+    #region PublicProperties
+        public Vector3 TargetPos { get { return targetPos; } set { targetPos = value; } }
+    #endregion
+    #region UnityFunctions
+    void Start () {
         cam = GetComponent<Camera>();
 }
 void Update () {
-        SetPosition();
-        GetZoom();
-        SetText();
+        SetPositionAndRotation();
+     //   GetZoom();
+      //  SetText();
 }
 #endregion
 #region CustomFunctions
-    void SetPosition()
+    void SetPositionAndRotation()
     {
-        Vector3 targetPos = assistant.CameraFocus + cameraOffset;
-        transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+        targetPos = assistant.CameraFocus + cameraOffset;
+        transform.position = Vector3.Lerp(transform.position, camRef.position, speed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, camRef.rotation, rotationSpeed * Time.deltaTime);
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, zoomSpeed * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+        //transform.LookAt(assistant.transform);
+        // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(targetRotation), rotationSpeed * Time.deltaTime);
     }
 
     void GetZoom()
@@ -68,7 +75,7 @@ void Update () {
         else if (cam.fieldOfView < targetFOV - .1f || cam.fieldOfView > targetFOV + .1f)
         {
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, zoomSpeed * Time.deltaTime);
-            print("in zoom loop");
+            //print("in zoom loop");
         }
 
     }

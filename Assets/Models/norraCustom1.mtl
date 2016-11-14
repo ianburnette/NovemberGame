@@ -1,0 +1,63 @@
+# Blender MTL File: 'norraCustom1.blend'
+# Material Count: 6
+
+newmtl Material.001
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.161520 0.005280 0.002749
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd .
+
+newmtl Material.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.018677 0.019285 0.033622
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd mixamo\norra1\Untitled.002.png
+
+newmtl Material.003
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.361933 0.082883
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd mixamo\norra1\norra1_Packed0_Diffuse.png
+
+newmtl Material.004
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.010728 0.003599 0.001539
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd mixamo\norra1\norra1_Packed0_Diffuse.png
+
+newmtl Material.004_Untitled.002
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.010728 0.003599 0.001539
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd mixamo\norra1\Untitled.002.png
+
+newmtl PackedMaterial0
+Ns 509.803922
+Ka 0.000000 0.000000 0.000000
+Kd 0.681803 0.776875 0.800000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 0
+map_Kd mixamo\norra1\norra1_Packed0_Diffuse.png
+map_d mixamo\\norra1\\norra1_Packed0_Opacity.png
