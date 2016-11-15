@@ -70,12 +70,12 @@ public class CharacterControls : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down * groundCheckDist, out hit, groundCheckDist, groundMask))
         { result = hit.point;
-            print("hit is " + hit.transform);
+       //     print("hit is " + hit.transform);
         //    grounded = true;
             Debug.DrawRay(transform.position, Vector3.down * groundCheckDist, Color.red);}
         if (hit.transform == null)
         {
-            print("not grounded");
+        //    print("not grounded");
          //   grounded = false;
             result = Vector3.zero;
             Debug.DrawRay(transform.position, Vector3.down * groundCheckDist, Color.green);}
